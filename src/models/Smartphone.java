@@ -1,66 +1,67 @@
 package models;
 
 /**
- * Smart phone class
+ * Represents a smart phone device extending the generic NumericObject class.
  * 
- * @author Cédric GUIDI
- * @version 1.0
+ * @author Cédric
+ * @version 2.0
  */
-public class Smartphone {
-	private String brand;
-	private String model;
+public class Smartphone extends NumericObject {
+
 	private String phoneNumber;
-	
+
+	// New attributes
+	private int storage;
+	private int ram;
+
 	/**
-	 * Constructor of Smart phone class
-	 * @param brand phone brand
-	 * @param model phone model
-	 * @param phoneNumber phone number
+	 * Constructor of Smartphone class.
+	 * 
+	 * @param brand         smartphone brand
+	 * @param model         smartphone model
+	 * @param price         price of the smartphone
+	 * @param phoneNumber   associated phone number
+	 * @param warrantyYears warranty years of the smartphone
+	 * @param color  		color of the smartphone
+	 * @param storage       storage capacity in GB
+	 * @param ram           RAM in GB
 	 */
-	public Smartphone(String brand, String model, String phoneNumber) {
-		this.brand = brand;
-		this.model = model;
+	public Smartphone(String brand, String model, double price, String phoneNumber,
+			int warrantyYears, String color, int storage, int ram) {
+		super(brand, model, price, warrantyYears, color);
 		this.phoneNumber = phoneNumber;
+		this.storage = storage;
+		this.ram = ram;
 	}
-	
-	/**
-	 * brand's getter
-	 * @return phone brand
-	 */
-	public String getBrand() {
-		return this.brand;
-	}
-	
-	/**
-	 * model's getter
-	 * @return phone model
-	 */
-	public String geModel() {
-		return this.model;
-	}
-	
-	/**
-	 * phone number's getter
-	 * @return phone number
-	 */
+
+	// --- Getters ---
 	public String getPhoneNumber() {
 		return this.phoneNumber;
 	}
-	
-	/**
-	 * phone number's setter
-	 * @param newPhoneNumber new phone number
-	 */
+
+	public int getStorage() {
+		return this.storage;
+	}
+
+	public int getRam() {
+		return this.ram;
+	}
+
+	// --- Setters ---
 	public void setPhoneNumber(String newPhoneNumber) {
 		this.phoneNumber = newPhoneNumber;
 	}
-	
+
 	/**
-	 * phone's attributes displayer
+	 * Displays smartphone information in a clean formatted style.
 	 */
+	@Override
 	public void display() {
-        System.out.println("    Brand       : " + this.brand);
-        System.out.println("    Model       : " + this.model);
-        System.out.println("    PhoneNumber : " + this.phoneNumber);
-    }
+		System.out.println("-------------- SMARTPHONE --------------");
+		super.display();
+		System.out.println("Phone Number   : " + this.phoneNumber);
+		System.out.println("Storage        : " + this.storage + " GB");
+		System.out.println("RAM            : " + this.ram + " GB");
+		System.out.println("----------------------------------------");
+	}
 }
