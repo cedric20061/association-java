@@ -10,10 +10,6 @@ public class Smartphone extends NumericObject {
 
 	private String phoneNumber;
 
-	// New attributes
-	private int storage;
-	private int ram;
-
 	/**
 	 * Constructor of Smartphone class.
 	 * 
@@ -28,23 +24,13 @@ public class Smartphone extends NumericObject {
 	 */
 	public Smartphone(String brand, String model, double price, String phoneNumber,
 			int warrantyYears, String color, int storage, int ram) {
-		super(brand, model, price, warrantyYears, color);
+		super(brand, model, price, warrantyYears, color, storage, ram);
 		this.phoneNumber = phoneNumber;
-		this.storage = storage;
-		this.ram = ram;
 	}
 
 	// --- Getters ---
 	public String getPhoneNumber() {
 		return this.phoneNumber;
-	}
-
-	public int getStorage() {
-		return this.storage;
-	}
-
-	public int getRam() {
-		return this.ram;
 	}
 
 	// --- Setters ---
@@ -60,8 +46,6 @@ public class Smartphone extends NumericObject {
 		System.out.println("-------------- SMARTPHONE --------------");
 		super.display();
 		System.out.println("Phone Number   : " + this.phoneNumber);
-		System.out.println("Storage        : " + this.storage + " GB");
-		System.out.println("RAM            : " + this.ram + " GB");
 		System.out.println("----------------------------------------");
 	}
 }

@@ -15,8 +15,6 @@ public class Laptop extends NumericObject {
     private ArrayList<String> OSList = new ArrayList<>();
 
     // New technical attributes
-    private int storage;
-    private int ram;
     private String cpu;
     private String gpu;
 
@@ -37,10 +35,8 @@ public class Laptop extends NumericObject {
     public Laptop(String brand, String model, double price, int warrantyYears, String color, String firstOS,
                   int storage, int ram, String cpu, String gpu) {
 
-    	super(brand, model, price, warrantyYears, color);
+    	super(brand, model, price, warrantyYears, color, storage, ram);
         OSList.add(firstOS);
-        this.storage = storage;
-        this.ram = ram;
         this.cpu = cpu;
         this.gpu = gpu;
     }
@@ -49,14 +45,6 @@ public class Laptop extends NumericObject {
 
     public ArrayList<String> getOSList() {
         return OSList;
-    }
-
-    public int getStorage() {
-        return this.storage;
-    }
-
-    public int getRam() {
-        return this.ram;
     }
 
     public String getCpu() {
@@ -94,8 +82,6 @@ public class Laptop extends NumericObject {
     public void display() {
         System.out.println("--------------- LAPTOP ----------------");
         super.display();
-        System.out.println("Storage        : " + this.storage + " GB");
-        System.out.println("RAM            : " + this.ram + " GB");
         System.out.println("CPU            : " + this.cpu);
         System.out.println("GPU            : " + this.gpu);
 

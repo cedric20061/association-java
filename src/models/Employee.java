@@ -104,7 +104,7 @@ public class Employee {
      */
     public void display() {
         System.out.println("=========================================");
-        System.out.println("EMPLOYEE INFORMATION");
+        System.out.println("	EMPLOYEE INFORMATION");
         System.out.println("=========================================");
         System.out.println("Name        : " + this.firstName + " " + this.lastName);
         System.out.println("Hire Year   : " + this.hireYear);

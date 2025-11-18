@@ -16,6 +16,8 @@ public class NumericObject {
     protected int warrantyYears;
     protected double weight;
     protected String color;
+    protected int storage;
+    protected int ram;
 
     /**
      * Base constructor for a numeric device.
@@ -25,13 +27,18 @@ public class NumericObject {
      * @param price         price in euros
      * @param warrantyYears warranty years of the product
      * @param color  		color of the product
+	 * @param storage       storage capacity in GB
+	 * @param ram           RAM in GB
      */
-    public NumericObject(String brand, String model, double price, int warrantyYears, String color) {
+    public NumericObject(String brand, String model, double price, 
+    		int warrantyYears, String color, int storage, int ram) {
         this.brand = brand;
         this.model = model;
         this.price = price;
         this.warrantyYears = warrantyYears;
         this.color = color;
+        this.storage = storage;
+		this.ram = ram;
     }
 
     /**
@@ -81,6 +88,14 @@ public class NumericObject {
     public String getColor() {
         return this.color;
     }
+    
+    public int getStorage() {
+		return this.storage;
+	}
+
+	public int getRam() {
+		return this.ram;
+	}
 
     /**
      * Brand setter
@@ -126,6 +141,8 @@ public class NumericObject {
         System.out.println("Color          : " + this.color);
         System.out.println("Price          : " + this.price + " €");
         System.out.println("Weight         : " + this.weight + " kg");
+        System.out.println("Storage        : " + this.storage + " GB");
+		System.out.println("RAM            : " + this.ram + " GB");
         System.out.println("Warranty       : " + this.warrantyYears + " years");
         System.out.println("High-End ?     : " + (isHighEnd() ? "YES" : "NO"));
         System.out.println("-----------------------------------------");
